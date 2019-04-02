@@ -13,7 +13,7 @@ public final class GraphQLQueryWatcher<Query: GraphQLQuery>: Cancellable, Apollo
   
   private var dependentKeys: Set<CacheKey>?
   
-  init(client: ApolloClient, query: Query, handlerQueue: DispatchQueue, resultHandler: @escaping OperationResultHandler<Query>) {
+  public init(client: ApolloClient, query: Query, handlerQueue: DispatchQueue, resultHandler: @escaping OperationResultHandler<Query>) {
     self.client = client
     self.query = query
     self.handlerQueue = handlerQueue
